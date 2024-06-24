@@ -6,25 +6,8 @@ class Car:
         self.engine_volume = engine_volume
         self.color = color
         self.price = price
+
     
-
-    def set_data(self, model, year, manufacturer, engine_volume, color, price):
-        self.model = model
-        self.year = year
-        self.manufacturer = manufacturer
-        self.engine_volume = engine_volume
-        self.color = color
-        self.price = price
-    
-
-    def display_data(self):
-        print(f"Model: {self.model}")
-        print(f"Year: {self.year}")
-        print(f"Manufacturer: {self.manufacturer}")
-        print(f"Engine Volume: {self.engine_volume} L")
-        print(f"Color: {self.color}")
-        print(f"Price: ${self.price}")
-
     def get_model(self):
         return self.model
     
@@ -62,14 +45,27 @@ class Car:
         self.price = price
 
 
-car = Car("Model S", 2022, "Tesla", 3.0, "Red", 79999)
-car.display_data()
 
-print("\nUpdating car data...\n")
-car.set_data("Model 3", 2021, "Tesla", 2.5, "Blue", 59999)
-car.display_data()
+car = Car("Model S", 2022, "T", 3.0, "Red", 79999)
 
-print("\nAccessing individual fields...\n")
+
+print(f"Model: {car.get_model()}")
+print(f"Year: {car.get_year()}")
+print(f"Manufacturer: {car.get_manufacturer()}")
+print(f"Engine Volume: {car.get_engine_volume()} L")
+print(f"Color: {car.get_color()}")
+print(f"Price: ${car.get_price()}")
+
+
+car.set_model("Model 3")
+car.set_year(2021)
+car.set_manufacturer("B")
+car.set_engine_volume(2.5)
+car.set_color("Blue")
+car.set_price(59999)
+
+
+print("\nUpdated car data:\n")
 print(f"Model: {car.get_model()}")
 print(f"Year: {car.get_year()}")
 print(f"Manufacturer: {car.get_manufacturer()}")
